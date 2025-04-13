@@ -23,8 +23,7 @@ class PCB
 public:
 	// Constructor
 	PCB(int pid, int stackPointer);
-	// Destructor
-	~PCB();
+
 	// Getters
 	int getPID() const { return pid; }
 	int getStackPointer() const { return stackPointer; }
