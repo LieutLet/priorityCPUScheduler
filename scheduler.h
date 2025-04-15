@@ -1,8 +1,11 @@
 #include priorityQueue.h
 
-//was told to use these for pthreads
-#include <stdio.h>
-#include <pthread.h>
+
+#include "PriorityQueue.h" 
+#include "Process.h"       
+#include <stdexcept>       // For std::out_of_range
+#include <iostream>        // For error reporting
+#include <string>          // Potentially needed 
 
 /*
 creates thread
@@ -10,21 +13,48 @@ dequeues from priority queue
 does processs
 loops
 */
+using QueueItem = Process*;
 
 class Scheduler {
 private:
-	//the priorityQueue in question
-	priorityQueue Q;
+	
+   	 // The Scheduler shares the ready queue in the main loop but doesn't own it.
+	PriorityQueue<QueueItemType>& readyQueue;
 
 public:
-	Scheduler(priorityQueue& queue) : Q(queue) {
+	Scheduler(PriorityQueue<QueueItemType>& queue) : readyQueue(queue) {
 		// constructor using reference to priorityQueue
 	}
 
 	//couldnt think what else to call it
-	void schedule:
+	void addReadyProcess(QueueItemType process) {
+	   if (!process) {
+	       return;
+	   }
+	 // Enqueue the process using its priority.
+         readyQueue.enqueue(process, process->priority);
 };
 
+QueueItemType selectNextProcess() {
+}
+
+bool isReadyQueueEmpty() const {
+}
+
+QueueItemType peekNextProcess() const {
+}
+
+ bool shouldPreempt(const Process* runningProcess) const{
+ }
+
+
+
+
+
+
+
+
+//no p-thread p-thread bad
 void Scheduler::schedule() {
 	int i = 0;
 	//creates thread for each node in the priorityqueue
