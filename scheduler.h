@@ -19,15 +19,15 @@ class Scheduler {
 private:
 	
    	 // The Scheduler shares the ready queue in the main loop but doesn't own it.
-	PriorityQueue<QueueItemType>& readyQueue;
+	PriorityQueue<QueueItem>& readyQueue;
 
 public:
-	Scheduler(PriorityQueue<QueueItemType>& queue) : readyQueue(queue) {
+	Scheduler(PriorityQueue<QueueItem>& queue) : readyQueue(queue) {
 		// constructor using reference to priorityQueue
 	}
 
 	//couldnt think what else to call it
-	void addReadyProcess(QueueItemType process) {
+	void addReadyProcess(QueueItem process) {
 	   if (!process) {
 	       return;
 	   }
@@ -35,13 +35,13 @@ public:
          readyQueue.enqueue(process, process->priority);
 };
 
-QueueItemType selectNextProcess() {
+QueueItem selectNextProcess() {
 }
 
 bool isReadyQueueEmpty() const {
 }
 
-QueueItemType peekNextProcess() const {
+QueueItem peekNextProcess() const {
 }
 
  bool shouldPreempt(const Process* runningProcess) const{
