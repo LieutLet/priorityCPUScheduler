@@ -95,6 +95,18 @@ public:
         *              or highest ready process has same or lower priority).
         */
 	bool shouldPreempt(const Process* runningProcess) const{
+		QueueItem highestReady = peekNextProcess();
+
+		if(!highestReady){
+			return false;
+		}
+
+
+		if(highReady -> priority < runningProcess -> priority){
+			return true;
+		}else{
+			return false;
+		}
  	}
 
 
