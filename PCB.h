@@ -21,14 +21,16 @@ using namespace std;
 class PCB
 {
 public:
+	PCB();									// Default constructor
+
 	// Constructor
-	PCB(int pid, int stackPointer);
+	PCB(int p, int sP);
 
 	// Getters
 	int getPID() const { return pid; }
 	int getStackPointer() const { return stackPointer; }
 	int getState() const { return state; }
-	int getOpenFiles() const { return openFiles; }
+	int getOpenFiles(vector<string>& files) const;
 	//int getRunTime() const { return runTime; }
 	// Setters
 	void setMemoryLimit(int limit) { memoryLimit = limit; }
@@ -60,10 +62,10 @@ PCB::PCB()
 }
 
 // Constructor
-PCB::PCB(int pid, int stackPointer)
+PCB::PCB(int p, int sP)
 {
-	pid = pid;
-	stackPointer = stackPointer;
+	pid = p;
+	stackPointer = sP;
 	state = 0;								// Default state
 	memoryLimit = 0;						// Default memory limit
 	//runTime = 0;							// Default run time
@@ -75,7 +77,7 @@ PCB::PCB(int pid, int stackPointer)
 // If there is space in the list, the file is added, and 1 is		//
 // returned. If there is no space, 0 is returned.					//
 // *****************************************************************//
-int PCB::addOpenFiles(string file);
+int PCB::addOpenFiles(string file)
 {
 	if (openFiles.size() <= memoryLimit) {
 		openFiles.append(file);					// Add file to open files
@@ -91,7 +93,7 @@ int PCB::addOpenFiles(string file);
 // A function to remove a specific file from the list of open files //
 // returns 0 if the file could not be removed, 1 if it was.		    //
 // *****************************************************************//
-int PCB::removeOpenFiles(string file);
+int PCB::removeOpenFiles(string file)
 {
 	if (openFiles.empty() == true) {
 		perror("Error: No open files");
@@ -107,5 +109,20 @@ int PCB::removeOpenFiles(string file);
 			return 0;
 		}
 	}
+}
+
+// *****************************************************************//
+// A function to get the list of open files.						//
+// returns 0 if there are no open files, 1 if there are.			//
+// *****************************************************************//
+int PCB::getOpenFiles(vector<string>& files) const
+{
+	if (openFiles.empty() == true) {
+		perror("Error: No open files");
+		return 0;
+	}
+	
+	files = openFiles;	// Copy open files to the vector
+	return 1;
 }
 #endif // !PCB
