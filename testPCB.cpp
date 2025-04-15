@@ -12,7 +12,8 @@ using namespace std;
 // *******************************************
 int main()
 {
-	PCB.process1(1, 1000);
+	PCB process1(1, 1000);
+	vector<string> files;
 
 	cout << "Default Process Information:" << endl;
 
@@ -20,11 +21,11 @@ int main()
 	cout << "Stack Pointer: " << process1.getStackPointer() << endl;
 	cout << "State: " << process1.getState() << endl;
 	cout << "Memory Limit: " << process1.getMemoryLimit() << endl;
-	cout << "Open Files: " << process1.getOpenFiles() << endl;
+	cout << "Open Files: " << process1.getOpenFiles(files) << endl;
 
 	cout << " ******************************************" << endl;
 	cout << "updating process information..." << endl;
-	
+
 	process1.setMemoryLimit(2000);
 	process1.setState(1);
 	process1.addOpenFiles("file1.txt");
@@ -34,7 +35,7 @@ int main()
 	cout << "Stack Pointer: " << process1.getStackPointer() << endl;
 	cout << "State: " << process1.getState() << endl;
 	cout << "Memory Limit: " << process1.getMemoryLimit() << endl;
-	cout << "Open Files: " << process1.getOpenFiles() << endl << endl;
+	cout << "Open Files: " << process1.getOpenFiles(files) << endl << endl;
 
 
 	return 0;
