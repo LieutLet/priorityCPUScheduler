@@ -37,7 +37,7 @@ using namespace std;
 //*************************************************************************************************//
 // Helper function to check for and handle CPU preemption.                                         //
 // Determines if the currently running process should be preempted by a higher-priority            //
-// process that has just become ready (e.g., via arrival or I/O completion).                       //
+// process that has just become ready (via arrival or I/O completion).                             //
 // If preemption occurs, the running process is moved back to the ready queue,                     //
 // and the CPU is marked as idle by setting currentCpuProcess to nullptr.                          //
 //                                                                                                 //
@@ -399,7 +399,7 @@ int main() {
          cout << "Total Simulation Time:   " << finalTime << " ticks" << endl;
 
     } else {
-        cout << "No processes terminated, cannot calculate average statistics." << endl;                                            // Error handling if no processes finished (if input file was empty or simulation time was too short)
+        cout << "No processes terminated, cannot calculate average statistics." << endl;                                            // Error handling if no processes finished (if input file was empty, or didnt contain valid processes)
     }
 
     return 0; 
