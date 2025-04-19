@@ -194,7 +194,7 @@ int main() {
             const ProcessData& data = loadedProcessDefinitions[nextArrivalIndex];                                                   // Get data for arriving process
 
             
-            auto newProcess = make_unique<Process>(data.processID, data.priority, data.arrivalTime);                                // Create the runtime Process object using unique_ptr for ownership
+            auto newProcess = make_unique<Process>(data.processID, data.priority, data.arrivalTime);                                // Create the runtime Process object using a unique_ptr for ownership of the process
 
             
             newProcess->cpuBursts = data.cpuBursts;                                                                                 // Copy CPU burst sequences from loaded data to the PCB object
