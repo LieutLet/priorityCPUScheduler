@@ -1,22 +1,22 @@
-//--------------------------------------------------------------------------------------------------
-//  ProcessLoader.cpp  -  Implementation of the plain-text process definition parser
-//
-//  Convert each non-comment line of a human-readable text file (default: processes.txt) into a
-//  fully-validated `ProcessData` structure (see processData.h).  The simulator calls
-//  `loadProcessesFromFile()` once at start-up and then treats the returned vector as immutable
-//  job descriptions.
-//
-//  File format enforced here:
-//  -------------------------
-//      PID  ARRIVAL  PRIORITY  CPU1  IO1  CPU2  IO2 ...  CPUn
-//  -  Tokens are whitespace-delimited decimal integers.
-//  -  The burst list must start with a CPU value and then alternate CPU/IO.
-//  -  Each burst length must be >0.
-//  -  The I/O-burst count can be equal to the CPU-burst count or one fewer (a final CPU burst).
-//  -  Blank lines and lines beginning with '#' are ignored.
-//
-//
-//--------------------------------------------------------------------------------------------------
+//**************************************************************************************************//
+//  ProcessLoader.cpp  -  Implementation of the plain-text process definition parser                //
+//                                                                                                  //
+//  Convert each non-comment line of a human-readable text file (default: processes.txt) into a     //
+//  fully-validated `ProcessData` structure (see processData.h).  The simulator calls               //
+//  `loadProcessesFromFile()` once at start-up and then treats the returned vector as immutable     //
+//  job descriptions.                                                                               //
+//                                                                                                  //
+//  File format enforced here:                                                                      //
+//  -------------------------                                                                       //
+//      PID  ARRIVAL  PRIORITY  CPU1  IO1  CPU2  IO2 ...  CPUn                                      //
+//  -  Tokens are whitespace-delimited decimal integers.                                            //
+//  -  The burst list must start with a CPU value and then alternate CPU/IO.                        //
+//  -  Each burst length must be >0.                                                                //
+//  -  The I/O-burst count can be equal to the CPU-burst count or one fewer (a final CPU burst).    //
+//  -  Blank lines and lines beginning with '#' are ignored.                                        //
+//                                                                                                  //
+//                                                                                                  //
+//**************************************************************************************************//
 
 #include "ProcessLoader.h"
 #include <fstream>                                                                                                                                  // For file input (ifstream)

@@ -6,7 +6,7 @@
 //                                                                                                    //
 //      PID  ARRIVAL  PRIORITY  CPU1  IO1  CPU2  IO2  ...  CPUn                                       //
 //                                                                                                    //
-//  Burst values must be strictly positive integers. The loader converts that human-readable          //    
+//  Burst values must be positive integers. The loader converts that human-readable                   //    
 //  representation into a vector of immutable ProcessData structures (see processData.h).             //   
 //                                                                                                    //
 //****************************************************************************************************//
