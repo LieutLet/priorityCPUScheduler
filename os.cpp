@@ -28,9 +28,9 @@
 #include "processData.h"                                                                                                        // Defines structure for initial process info
 #include "ProcessLoader.h"                                                                                                      // Declares function to load processes from file
 #include "priorityQueue.h"                                                                                                      // Defines the PriorityQueue class template
-#include "Scheduler.h"                                                                                                          // Defines the Scheduler class
+#include "scheduler.h"                                                                                                          // Defines the Scheduler class
 
-using QueueItem = Process*;                                                                                                     // Defines the type of item stored in the Ready Queue and managed by the Scheduler.
+//using QueueItem = Process*;                                                                                                     // Defines the type of item stored in the Ready Queue and managed by the Scheduler.
                                                                                                                                 // Alias for Process*, consistent with Scheduler.h definition.
 using namespace std;
 
