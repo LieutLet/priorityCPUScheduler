@@ -76,7 +76,7 @@ int main() {
     cout << "===== Process Scheduling Simulation (Priority Based) =====" << endl;
 
     //*************************************************************************************************//
-    // --- 1. Load Process Definitions ---                                                             //
+    // -------------------------------- 1. Load Process Definitions --------------------------------   //
     //*************************************************************************************************//
 
     vector<ProcessData> loadedProcessDefinitions;
@@ -122,15 +122,13 @@ int main() {
     cout << "\n--- Simulation Starting ---" << endl;
     
     //*************************************************************************************************//
-    // --- 3. Main Simulation Loop ---                                                                 //
+    // -------------------------------- 3. Main Simulation Loop ----------------------------------     //
     //     -Keep looping as long as not all processes have terminated                                  //
     //     -Also checks if CPU is idle to prevent infinite loops                                       //
     //*************************************************************************************************//
 
-    while (processesTerminated < totalProcesses) {
-        // --- Safety Check: Detect potential infinite loops ---
-        
-        
+    while (processesTerminated < totalProcesses) {                                                                                  // Safety Check: Detect potential infinite loops 
+      
         if (nextArrivalIndex == loadedProcessDefinitions.size() &&                                                                  // If no more processes will arrive, the ready queue is empty, the CPU is idle,
             readyQueue.is_empty() &&                                                                                                // and no I/O events are pending, the simulation cannot progress further.
             currentCpuProcess == nullptr &&
