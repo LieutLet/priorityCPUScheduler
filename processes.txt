@@ -1,0 +1,27 @@
+# processes.txt - Sample Process Definitions
+# Format: ProcessID ArrivalTime Priority CPUBurst1 [IOBurst1 CPUBurst2 IOBurst2 ... ] CPUBurstN
+# Priority: Lower value means higher priority.
+
+# Process 1: Arrives first, medium priority, several bursts
+1 0 5 7 10 5 12 8
+
+# Process 2: Arrives early, high priority (should run soon after arrival)
+2 2 1 4 25 6 10 3
+
+# Process 3: Arrives later, medium-high priority
+3 4 3 10 5 12
+
+# Process 4: Arrives later, highest priority (should preempt if possible), short bursts
+4 6 0 3 5 2
+
+# Process 5: Arrives same time as P1, same medium priority (tests FIFO within priority 5)
+5 0 5 5 8 4 10 4 8 4
+
+# Process 6: Arrives somewhat late, lowest priority, long CPU burst
+6 10 8 15
+
+# Process 7: Arrives same time as P2, same high priority (tests FIFO within priority 1)
+7 2 1 2 40 3
+
+# Process 8: Arrives very late, medium priority
+8 15 4 6 6 6 6 6
