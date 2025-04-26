@@ -7,4 +7,4 @@ If the os_simulation.exe doesn't work, you will need to compile it using the abo
 
 To change which processes to test the program with, you will need to edit the "processes.txt" file, this is the easiest method of editing the processes. The more complicated way is to edit os.cpp, and change the string filename to the preferred file (around line 83 in the main function). 
 
-testPCB.cpp, test_pq.cpp are both special test files created to test PCB.h and priorityQueue.h they are not needed to compile the program.
+testPCB.cpp, test_pq.cpp, test_scheduler.cpp are both special test files created to test PCB.h and priorityQueue.h they are not needed to compile the program.
