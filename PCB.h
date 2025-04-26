@@ -1,5 +1,5 @@
 // *********************************************************************************************************//
-// File: Process.h                                                                                          //
+// File: PCB.h                                                                                          //
 //                                                                                                          //
 // Defines the structure representing a Process Control Block (PCB)                                         //
 // for the operating system simulation.                                                                     //
@@ -10,8 +10,8 @@
 // to manage and simulate a process. It also defines the `State` enumeration                                //
 // listing the possible states a process can be in during its lifecycle.                                    //
 // *********************************************************************************************************//
- #ifndef PROCESS_H
- #define PROCESS_H
+ #ifndef PCB_H
+ #define PCB_H
  
  #include <vector>    // Required for vector (burst sequences)
  #include <string>    // Often included alongside vector/iostream, potentially useful
@@ -116,4 +116,4 @@
  
  }; 
  
- #endif // PROCESS_H
+ #endif // PCB_H
